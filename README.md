@@ -54,7 +54,7 @@ The algorithm has been tested in MATLAB, simulating various industrial scenarios
 2. Open MATLAB and navigate to the project folder.
 3. Run the simulation:
    ```matlab
-   run main.m
+   run Main.m
    ```
    
 ## References
