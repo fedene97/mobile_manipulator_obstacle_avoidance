@@ -1,0 +1,2 @@
+# mobile_manipulator_obstacle_avoidance
+Non-holonomic mobile manipulator obstacle avoidance with adaptive prioritization
