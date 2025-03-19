@@ -54,10 +54,9 @@ The algorithm has been tested in MATLAB, simulating various industrial scenarios
 2. Open MATLAB and navigate to the project folder.
 3. Run the simulation:
    ```matlab
-   run main_simulation.m
+   run main.m
    ```
-4. Adjust parameters in `config.m` to test different scenarios.
-
+   
 ## References
 This algorithm is based on the research article:
 > **F. Neri, G. Palmieri, M. Callegari**, "Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization," *MDPI Robotics*, 2025.
