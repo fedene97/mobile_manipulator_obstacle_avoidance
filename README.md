@@ -48,7 +48,7 @@ The algorithm has been tested in MATLAB, simulating various industrial scenarios
 ## Installation & Usage
 1. Clone this repository:
    ```bash
-   git clone https://github.com/mobile_manipulator_obstacle_avoidance.git
+   git clone https://github.com/fedene97/mobile_manipulator_obstacle_avoidance.git
    cd mobile_manipulator_obstacle_avoidance
    ```
 2. Open MATLAB and navigate to the project folder.
