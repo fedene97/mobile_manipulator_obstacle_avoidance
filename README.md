@@ -1,52 +1,52 @@
 # Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization
 
 ## Overview
-This project implements an obstacle avoidance algorithm for a mobile manipulator system consisting of:
+This project presents an advanced **obstacle avoidance algorithm** for a **mobile manipulator system**, integrating:
 - A **6-DOF anthropomorphic robotic arm** (e.g., UR10)
 - A **non-holonomic differential drive mobile base** (e.g., MiR100)
 
-The algorithm dynamically adjusts movement prioritization between the manipulator and the base using a **weighted pseudo-inverse matrix**, allowing obstacle avoidance without predefined trajectory planning.
+The algorithm dynamically adjusts movement prioritization between the manipulator and the base using a **weighted pseudo-inverse matrix**, allowing efficient obstacle avoidance without predefined trajectory planning.
 
-## Features
+## Key Features
 - **Real-time obstacle avoidance** in dynamic environments
 - **Adaptive prioritization**:
   - Prioritizes base movement for long-distance navigation
   - Prioritizes manipulator movement for fine adjustments
-- **Redundancy exploitation**: Uses null space projection to keep the end-effector fixed when necessary
-- **Differential drive constraints**: Ensures feasible trajectories for a non-holonomic system
+- **Redundancy exploitation**: Uses **null space projection** to maintain the end-effector's position when needed
+- **Non-holonomic constraints compliance**: Ensures feasible trajectories for the differential drive system
 
 ## Algorithm Details
-1. **Kinematic Model**
-   - The system consists of a **6-DOF manipulator** and a **differential drive base**.
-   - Uses a **generalized Jacobian matrix** to integrate manipulator and base movements.
+### 1. Kinematic Model
+- The system consists of a **6-DOF robotic manipulator** mounted on a **differential drive base**.
+- Uses a **generalized Jacobian matrix** to integrate manipulator and base movements.
 
-2. **Obstacle Avoidance Strategy**
-   - Detects obstacles using a **safety region** defined by a radius **r**.
-   - Generates **repulsive velocities** for collision avoidance.
-   - Modifies movement using **closed-loop inverse kinematics (CLIK)**.
+### 2. Obstacle Avoidance Strategy
+- Detects obstacles within a **safety region** defined by a radius **r**.
+- Generates **repulsive velocities** to prevent collisions.
+- Utilizes **closed-loop inverse kinematics (CLIK)** to adjust movement adaptively.
 
-3. **Adaptive Prioritization**
-   - **Weighted Pseudo-Inverse Control**:
-     - Adjusts priority between base and manipulator dynamically.
-     - Allows smooth transitions between coarse positioning and fine adjustments.
-   - **Three Operational Zones**:
-     - **Zone 1**: Base-only movement for long-distance travel.
-     - **Zone 2**: Transition phase with increased manipulator involvement.
-     - **Zone 3**: Full redundancy exploitation near the goal.
+### 3. Adaptive Prioritization
+- **Weighted Pseudo-Inverse Control**:
+  - Dynamically adjusts priority between base and manipulator.
+  - Ensures smooth transitions between coarse and fine adjustments.
+- **Three Operational Zones**:
+  - **Zone 1**: Base-dominant movement for long-distance travel.
+  - **Zone 2**: Transition phase with increasing manipulator involvement.
+  - **Zone 3**: Full redundancy exploitation near the goal.
 
-## Simulations
-The algorithm has been tested in MATLAB, simulating various industrial scenarios:
-- **Obstacle interference with the end-effector** → Manipulator prioritization
-- **Obstacle blocking the mobile base** → Base movement with redundancy exploitation
-- **Long-distance navigation** → Progressive activation of manipulator as the target approaches
+## Simulations & Testing
+The algorithm has been extensively tested in **MATLAB**, simulating various industrial scenarios:
+- **Obstacle near the end-effector** → Manipulator prioritization.
+- **Obstacle interfering with moving base** → Base maneuvering with redundancy exploitation.
+- **Long-distance navigation** → Progressive activation of manipulator as the target approaches.
 
 ## Requirements
 - **MATLAB** (Tested on version R2022b)
-- **Robotics Toolbox** for MATLAB
+- **Robotics Toolbox for MATLAB**
 - **URDF model** of the mobile manipulator (UR10 + MiR100 or similar)
 
 ## Installation & Usage
-1. Clone this repository:
+1. Clone the repository:
    ```bash
    git clone https://github.com/fedene97/mobile_manipulator_obstacle_avoidance.git
    cd mobile_manipulator_obstacle_avoidance
@@ -56,9 +56,9 @@ The algorithm has been tested in MATLAB, simulating various industrial scenarios
    ```matlab
    run Main.m
    ```
-   
+
 ## References
-This algorithm is based on the research article:
+This work is based on the following research article:
 > **F. Neri, G. Palmieri, M. Callegari**, "Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization," *MDPI Robotics*, 2025.
 
 ## License
