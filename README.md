@@ -45,17 +45,21 @@ The algorithm has been extensively tested in **MATLAB**, simulating various indu
 - **Robotics Toolbox for MATLAB**
 - **URDF model** of the mobile manipulator (UR10 + MiR100 or similar)
 
-## Installation & Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/fedene97/mobile_manipulator_obstacle_avoidance.git
-   cd mobile_manipulator_obstacle_avoidance
-   ```
-2. Open MATLAB and navigate to the project folder.
-3. Run the simulation:
-   ```matlab
-   run Main.m
-   ```
+## Required Files Download
+
+To properly run the simulation, you need to download the following:
+
+1. **`Matlab_Simulation` folder**: Clone or download this repository.
+2. **Additional files**: Download the required files from the following link:  
+   [Download additional files](https://univpm-my.sharepoint.com/:f:/g/personal/p019104_staff_univpm_it/EjArSEl71zRGuNXeg9USL3ABlbzB_3effC30kmyXSbDzFg?e=xJv9NQ)  
+
+### Installation Instructions:
+
+1. Download and place the `Matlab_Simulation` folder in your desired directory.
+2. Open the provided link and download all available files.
+3. Copy the downloaded files into the `Matlab_Simulation` folder, overwriting any existing files if necessary.
+4. Open MATLAB and navigate to the `Matlab_Simulation` folder.
+5. Run the `Main.m` script to start the simulation.
 
 ## References
 This work is based on the following research article:
