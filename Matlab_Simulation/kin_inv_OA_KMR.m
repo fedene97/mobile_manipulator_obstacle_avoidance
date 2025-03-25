@@ -332,6 +332,7 @@ end
 %         Frame_i = 0;
 %     end
 
+    pause(0.001)
 end
 close(vid2);
 end

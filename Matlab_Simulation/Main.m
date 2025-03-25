@@ -26,7 +26,7 @@ r_min=0.10;
 r=4/3*r_min;
 v0_att=1;
 k_e=[k_e_tra,k_e_tra,k_e_tra,k_e_rot,k_e_rot,k_e_rotz]';
-steps=250; % 500 is better
+steps=300; % 500 is better
 dt=T/steps;
 k_v=0;
 order_Bezier_curve = 3;
@@ -271,14 +271,15 @@ xlim ([0 steps])
 vidName = ['.\',Data,'\test_',char(datetime('now','format','yyMMdd_HHmmss')),'.mp4'];
 fig2 = figure(20);
 fig2.WindowState = 'maximized';
-vid = VideoWriter(vidName,'MPEG-4');
-open(vid);
+% vid = VideoWriter(vidName,'MPEG-4');
+% open(vid);
 view(-45,30)
 camva(9);
 axis equal
 traiettoria=[];
 n_frame=5;
 Frame_i = 0;
+pause(1);
 for i=1:n_frame:size(Q,2)
 cla
 
@@ -308,12 +309,17 @@ zlim ([-0 2.0])
 xlabel('x [m]')
 ylabel('y [m]')
 zlabel('z [m]')
-view(60,20);
-F(i)= getframe;
-frame = getframe(gcf);
+if esempio==3
+    view(30,30); % for Es. 3
+else
+    view(60,20);
+end
+
+% F(i)= getframe;
+% frame = getframe(gcf);
 grid on
 
-Frame_i = Frame_i + 1;
+% Frame_i = Frame_i + 1;
 
 % if i==1
 %     saveas(gcf,append('.\Immagini\','Cad',num2str(0),'.png'));
@@ -325,7 +331,9 @@ Frame_i = Frame_i + 1;
 %     Frame_i = 0;
 % end
 
-writeVideo(vid,frame);
+% writeVideo(vid,frame);
+pause(0.001)
+hold off
 end
 
-close(vid);
+% close(vid);
