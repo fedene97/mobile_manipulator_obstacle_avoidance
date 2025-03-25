@@ -213,12 +213,12 @@ if zona==1
                       -vector_n_global(1)*sin(yaw) + vector_n_global(2)*cos(yaw);
                       0];
     segno=cross(local_versor,vector_n_local);
-    sin_angle = norm(cross(local_versor,vector_n_local))/norm(vector_n_local)*norm(local_versor); % Angolo tra vettore d0 locale e vettore [1 0 0] dell'asse x locale
+    sin_angle = norm(cross(local_versor,vector_n_local))/norm(vector_n_local)*norm(local_versor);
     angle_rif = -sign(segno(3))*asind(sin_angle);
 
     P_r_loc = P_r - X_ac_nav(1:3,i);
     px =  P_r_loc(1)*cos(yaw) + P_r_loc(2)*sin(yaw);
-    py = -P_r_loc(1)*sin(yaw) + P_r_loc(2)*cos(yaw); % Pr nel sistema locale
+    py = -P_r_loc(1)*sin(yaw) + P_r_loc(2)*cos(yaw); % Pr in the local reference system
     dQ_rep2 = dQ*0;
     dQ_rep2(3) = a_v*v0_rep/(py*cosd(angle_rif)-px*sind(angle_rif));
     
@@ -309,14 +309,16 @@ end
     xlabel('x [m]')
     ylabel('y [m]')
     zlabel('z [m]')
-    view(60,20);
     if esempio==3
         view(30,30); % for Es. 3
+    else
+        view(60,20);
     end
     plot3(X_ac(1,i),X_ac(2,i),X_ac(3,i),'*b');
     plot3(X_pl(1),X_pl(2),X_pl(3),'ob');
     hold off
-    frame2 = getframe(gcf);
+
+%     frame2 = getframe(gcf);
 %     writeVideo(vid2,frame2)
 
 %     Frame_i = Frame_i + 1;

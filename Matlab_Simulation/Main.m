@@ -14,7 +14,7 @@ global X_i X_f dt T r r_min r_inf r_sup Data...
 align= 0;
 
 %% Data
-esempio = 3; % 1 2 3
+esempio = 2; % 1 2 3
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Example
 [v_1,v_2,Oi,Of,dOi,X_i,X_f]=Dati_simulazione(esempio);
@@ -26,7 +26,7 @@ r_min=0.10;
 r=4/3*r_min;
 v0_att=1;
 k_e=[k_e_tra,k_e_tra,k_e_tra,k_e_rot,k_e_rot,k_e_rotz]';
-steps=500; % 500 is better
+steps=250; % 500 is better
 dt=T/steps;
 k_v=0;
 order_Bezier_curve = 3;
@@ -58,41 +58,41 @@ r_mir = 0.010;
 l_mir = 0.890;
 d_mir = 0.580;
 
-% %% Color MIR
-% mir = stlread('ARSI_Chimera_v03.stl');
-% mir_Points=mir.Points;
-% mir_Points(:,1)=-mir.Points(:,1);
-% mir_Points(:,2)=-mir.Points(:,2);
-% 
-% mir_Points(:,1)=mir_Points(:,1)+(max(mir_Points(:,1))-min(mir_Points(:,1)))/2-max(mir_Points(:,1));
-% mir_Points(:,1)=mir_Points(:,1)+Dis_ruote;
-% mir_Points(:,2)=mir_Points(:,2)+(max(mir_Points(:,2))-min(mir_Points(:,2)))/2-max(mir_Points(:,2));
-% mir_Points(:,3)=mir_Points(:,3)-min(mir_Points(:,3));
-% 
-% c = ones(size(mir_Points,1),3);
-% % Gray color
-% idx = find(mir_Points(:,3)<180);
-% c(idx,1)=0.4;
-% c(idx,2)=0.4;
-% c(idx,3)=0.4;
-% 
-% % Blue color
-% idx = find(mir_Points(:,3)>=180 & mir_Points(:,3)<200);
-% c(idx,1)=0;
-% c(idx,2)=0.9;
-% c(idx,3)=1;
-% 
-% % Gray color
-% idx = find(mir_Points(:,3)>=200);
-% c(idx,1)=0.4;
-% c(idx,2)=0.4;
-% c(idx,3)=0.4;
-% 
-% trisurf(triangulation(mir.ConnectivityList,mir_Points/1000),'facevertexcdata',[c(:,1) c(:,2) c(:,3)],'FaceColor','interp','edgealpha',0);
-% camhandle = camlight;
-% set(camhandle,'visible','on')
-% material('dull')
-% ImpostazioneView % Set display options
+%% Color MIR
+mir = stlread('MobileRobot.stl');
+mir_Points=mir.Points;
+mir_Points(:,1)=-mir.Points(:,1);
+mir_Points(:,2)=-mir.Points(:,2);
+
+mir_Points(:,1)=mir_Points(:,1)+(max(mir_Points(:,1))-min(mir_Points(:,1)))/2-max(mir_Points(:,1));
+mir_Points(:,1)=mir_Points(:,1)+Dis_ruote;
+mir_Points(:,2)=mir_Points(:,2)+(max(mir_Points(:,2))-min(mir_Points(:,2)))/2-max(mir_Points(:,2));
+mir_Points(:,3)=mir_Points(:,3)-min(mir_Points(:,3));
+
+c = ones(size(mir_Points,1),3);
+% Gray color
+idx = find(mir_Points(:,3)<180);
+c(idx,1)=0.4;
+c(idx,2)=0.4;
+c(idx,3)=0.4;
+
+% Blue color
+idx = find(mir_Points(:,3)>=180 & mir_Points(:,3)<200);
+c(idx,1)=0;
+c(idx,2)=0.9;
+c(idx,3)=1;
+
+% Gray color
+idx = find(mir_Points(:,3)>=200);
+c(idx,1)=0.4;
+c(idx,2)=0.4;
+c(idx,3)=0.4;
+
+trisurf(triangulation(mir.ConnectivityList,mir_Points/1000),'facevertexcdata',[c(:,1) c(:,2) c(:,3)],'FaceColor','interp','edgealpha',0);
+camhandle = camlight;
+set(camhandle,'visible','on')
+material('dull')
+ImpostazioneView % Set display options
 
 %% Robot
 UR5 = importrobot('UR10_correct.urdf');
@@ -134,12 +134,12 @@ end
 %% Program start
 Q_i_KMR = [0 0 X_i(6) Q_i' 0]';
 
-% %% Test plot
-% i=1;
-% X_ac_nav=[0;0;0;0;0;0];
-% plot_MIR(Q_i_KMR,r_min); hold on
-% plot_UR5_link(Q_i_KMR,0.1);
-% axis equal
+%% Test plot
+i=1;
+X_ac_nav=[0;0;0;0;0;0];
+plot_MIR(Q_i_KMR,r_min); hold on
+plot_UR5_link(Q_i_KMR,0.1);
+axis equal
 
 %% Calculate straight trajectory for obstacle, to simulate moving obstacles
 [O,dO]=obstacles_generation(Oi,Of,dOi,dt,T);

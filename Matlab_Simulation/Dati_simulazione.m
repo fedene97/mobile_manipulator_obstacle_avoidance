@@ -5,7 +5,7 @@ global K_path T v0_rep k_e_tra k_e_rot k_e_rotz K1 K2 K3
     v_1=0.1;
     v_2=0.5;
 switch esempio
-    case 1 % Ostacolo movimento alto
+    case 1 % Example 1
         X_i=[0.5  0 1.1 pi pi 0]';
         X_f=[0.5001 0 1.1 pi pi 0]';
         Oi=[ 0.55  6; 
@@ -24,7 +24,7 @@ switch esempio
         K1=2; 
         K2=2; 
         K3=0.5; 
-    case 2 % Ostacolo movimento basso
+    case 2 % Example 2
         X_i=[0.5    0 1.1 pi pi 0]';
         X_f=[0.5001 0 1.1 pi pi 0]';
         Oi=[ 0.40  6; 
@@ -43,7 +43,7 @@ switch esempio
         K1=2; 
         K2=2; 
         K3=0.5; 
-    case 3 % Ostacolo zone Articolo
+    case 3 % Example 3
         X_i=[0.5  0 1.1 pi pi 0]';
         X_f=[5.0  0 1.1 pi pi 0]';
         Oi=[4     1.00  3; 
