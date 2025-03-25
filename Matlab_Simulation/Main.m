@@ -254,18 +254,18 @@ xlim ([0 steps])
 %% Inverse kinematics calculation
 [Q,distanza_minima,dQ]=kin_inv_OA_KMR(t,X,dX,O,dO,X_nav,dX_nav);
 
-figure(1000)
-plot(t(2:end),1000*distanza_minima,'b');hold on
-plot([0 T],1000*[r r],'--k')
-plot([0 T],1000*[r_min r_min],'--k')
-plot([0 T],1000*[(r_min+r)/2 (r_min+r)/2],'--k')
-xlim([0 T])
-ylim([1000*r_min 1000*max(distanza_minima)+5])
-xlabel('t [s]')
-ylabel ('[mm]')
-legend('minimum distance robot-obstacle')
-saveas(gcf,append('.\',Data,'\test_',char(datetime('now','format','yyMMdd_HHmmss')),'OA_dist.png'));
-span=10;
+% figure(1000)
+% plot(t(2:end),1000*distanza_minima,'b');hold on
+% plot([0 T],1000*[r r],'--k')
+% plot([0 T],1000*[r_min r_min],'--k')
+% plot([0 T],1000*[(r_min+r)/2 (r_min+r)/2],'--k')
+% xlim([0 T])
+% ylim([1000*r_min 1000*max(distanza_minima)+5])
+% xlabel('t [s]')
+% ylabel ('[mm]')
+% legend('minimum distance robot-obstacle')
+% saveas(gcf,append('.\',Data,'\test_',char(datetime('now','format','yyMMdd_HHmmss')),'OA_dist.png'));
+% span=10;
 
 %% Start simulation plot
 vidName = ['.\',Data,'\test_',char(datetime('now','format','yyMMdd_HHmmss')),'.mp4'];
@@ -313,7 +313,8 @@ F(i)= getframe;
 frame = getframe(gcf);
 grid on
 
-% Frame_i = Frame_i + 1;
+Frame_i = Frame_i + 1;
+
 % if i==1
 %     saveas(gcf,append('.\Immagini\','Cad',num2str(0),'.png'));
 %     print(gcf,append('.\Immagini\','Cad',num2str(0),'.eps'),'-depsc');
@@ -323,8 +324,8 @@ grid on
 %     print(gcf,append('.\Immagini\','Cad',num2str(i+n_frame-1),'.eps'),'-depsc');
 %     Frame_i = 0;
 % end
-% 
-% writeVideo(vid,frame);
+
+writeVideo(vid,frame);
 end
 
 close(vid);
