@@ -152,18 +152,18 @@ dO=dO*10000;
 [t,X,dX,X_bez,dX_bez]=trajectory3D(order_Bezier_curve); % Calculate trajectory
 
 %% 3D trajectory plot
-figure(2)
-plot_sfere(O, 0.05)
-plot3(X(1,:),X(2,:), X(3,:),'.g')
-plot3(X_bez(1,:),X_bez(2,:), X_bez(3,:),'.m')
-axis equal
-xlim ([min(X_i(1),X_f(1))-1.2 max(X_i(1),X_f(1))+1.2])
-ylim ([min(X_i(2),X_f(2))-1.2 max(X_i(2),X_f(2))+1.2])
-zlim ([-0.1 1.9])
-xlabel('x [m]')
-ylabel('y [m]')
-zlabel('z [m]')
-view(0,90);
+% figure(2)
+% plot_sfere(O, 0.05)
+% plot3(X(1,:),X(2,:), X(3,:),'.g')
+% plot3(X_bez(1,:),X_bez(2,:), X_bez(3,:),'.m')
+% axis equal
+% xlim ([min(X_i(1),X_f(1))-1.2 max(X_i(1),X_f(1))+1.2])
+% ylim ([min(X_i(2),X_f(2))-1.2 max(X_i(2),X_f(2))+1.2])
+% zlim ([-0.1 1.9])
+% xlabel('x [m]')
+% ylabel('y [m]')
+% zlabel('z [m]')
+% view(0,90);
 
 X = X_bez;
 dX = dX_bez;
