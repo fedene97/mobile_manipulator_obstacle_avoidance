@@ -1,4 +1,4 @@
-# Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization
+# Non-holonomic mobile manipulator obstacle avoidance with adaptive prioritization
 
 ## Overview
 This project presents an advanced **obstacle avoidance algorithm** for a **mobile manipulator system**, integrating:
