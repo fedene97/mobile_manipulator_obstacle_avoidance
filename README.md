@@ -65,6 +65,25 @@ To properly run the simulation, you need to download the following:
 This work is based on the following research article:
 > **F. Neri, G. Palmieri, M. Callegari**, "Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization," *MDPI Robotics*, 2025.
 
+> **F. Neri, G. Palmieri, M. Callegari**,  
+> *Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization*,  
+> **Robotics**, vol. 14, no. 4, art. 52, 2025.  
+> [https://doi.org/10.3390/robotics14040052](https://doi.org/10.3390/robotics14040052)
+
+### BibTeX
+
+```bibtex
+@article{neri2025non,
+  title={Non-Holonomic Mobile Manipulator Obstacle Avoidance with Adaptive Prioritization},
+  author={Neri, Federico and Palmieri, Giacomo and Callegari, Massimo},
+  journal={Robotics},
+  volume={14},
+  number={4},
+  pages={52},
+  year={2025},
+  publisher={MDPI}
+}
+
 ## License
 This project is licensed under the **Creative Commons Attribution (CC BY) 4.0** license. See [LICENSE](LICENSE) for details.
 
