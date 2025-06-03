@@ -34,6 +34,8 @@ The algorithm dynamically adjusts movement prioritization between the manipulato
   - **Zone 2**: Transition phase with increasing manipulator involvement.
   - **Zone 3**: Full redundancy exploitation near the goal.
 
+![Adaptive Prioritization Scheme](images/adaptive_prioritization.png)
+
 ## Simulations & Testing
 The algorithm has been extensively tested in **MATLAB**, simulating various industrial scenarios:
 - **Obstacle near the end-effector** → Manipulator prioritization.
